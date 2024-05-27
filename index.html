@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Extension</title>
+    <script src="https://cdn.jsdelivr.net/npm/livekit-client/dist/livekit-client.umd.min.js"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -33,13 +34,16 @@
   
 </head>
 <body>
-    <h1>I am an Extension</h1>
+    <h1>Edit Docs</h1>
     <label for="title">Enter Title</label>
     <input type="text" name="title" id="title">
     <label for="content">Enter Content</label>
     <input type="text" name="content" id="content">
     <button id="btn">Submit</button>
 
+    <h1>Connect to Room</h1>
+    <button id="connect-btn">Connect</button>
+    
     <script src="script.js"></script>
 </body>
 </html>
