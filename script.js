@@ -46,15 +46,21 @@ document.getElementById("btn").addEventListener("click", function () {
 document
   .getElementById("connect-btn")
   .addEventListener("click", async function () {
-    const room = new LivekitClient.Room();
+    try {
+      const room = new LivekitClient.Room();
 
-    const url = "wss://auto-web-11iwp7z9.livekit.cloud";
+      const url = "wss://auto-web-11iwp7z9.livekit.cloud";
 
-    const token = "eyJhbGciOiJIUzI1NiJ9.eyJ2aWRlbyI6eyJyb29tSm9pbiI6dHJ1ZSwicm9vbSI6InJvb20tMTg3In0sImlzcyI6IkFQSWJ1ZEpjVHVRVm9zUiIsImV4cCI6MTcxNjgxNDA5MiwibmJmIjowLCJzdWIiOiJ1c2VyLTE4NyJ9.2TtINgdQ-2TrqURqXadOKUJ0zSGmMX_Gsq5NppNeWHE";
+      const token =
+        "eyJhbGciOiJIUzI1NiJ9.eyJ2aWRlbyI6eyJyb29tSm9pbiI6dHJ1ZSwicm9vbSI6InJvb20tNTI5In0sImlzcyI6IkFQSWJ1ZEpjVHVRVm9zUiIsImV4cCI6MTcxNjg4Mzk4NSwibmJmIjowLCJzdWIiOiJ1c2VyLTUyOSJ9.mkvf39LY7Kur7JfBV6z34Guj-f--JuJ1mrHKMqKeZ8M";
 
-    room.prepareConnection(url, token);
+      room.prepareConnection(url, token);
 
-    await room.connect(url, token);
-    console.log("connected to room", room.name);
-    alert("Connected to room: " + room.name);
+      await room.connect(url, token);
+      console.log(room);
+      alert("Connected to room: " + room.name);
+    } catch (error) {
+      console.error(error);
+      alert(error);
+    }
   });
