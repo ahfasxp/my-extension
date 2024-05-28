@@ -1,15 +1,21 @@
 {
-    "manifest_version": 3,
-    "name": "My Extension",
-    "description": "Base Level Extension",
-    "version": "1.0",
-    "permissions": [
-      "activeTab",
-      "scripting"
-    ],
-    "action": {
-      "default_popup": "index.html",
-      "default_icon": "hello_extensions.png"
-    }
+  "manifest_version": 3,
+  "name": "My Extension",
+  "description": "Base Level Extension",
+  "version": "1.0",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "sidePanel"
+  ],
+  "background": {
+    "service_worker": "service-worker.js"
+  },
+  "action": {
+    "default_icon": "hello_extensions.png",
+    "default_title": "Click to open my extension"
+  },
+  "side_panel": {
+    "default_path": "index.html"
   }
-  
+}
